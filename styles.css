@@ -7,6 +7,7 @@
 
 .left-side{
 	display: flex;
+	flex-direction: column;
 }
 
 .nav-wrapper > .left-side > div {
@@ -15,3 +16,10 @@
 	text-transform: uppercase;
 	
 }
+
+.nav-link-wrapper {
+	height: 22px
+	border-right: 2px solid;
+	transition: border-right 0.5s;
+}
+
