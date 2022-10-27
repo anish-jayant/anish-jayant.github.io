@@ -1,3 +1,17 @@
-.nav-wraper {
-	display: flex
+.nav-wrapper {
+	display: flex;
+	justify-content: space-between;
+	padding: 38px;
+	
+}
+
+.left-side{
+	display: flex;
+}
+
+.nav-wrapper > .left-side > div {
+	margin-bottom: 20 px;
+	font-size: 0.9 em;
+	text-transform: uppercase;
+	
 }
