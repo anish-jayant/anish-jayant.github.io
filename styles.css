@@ -3,6 +3,34 @@
    padding: 0px;
 }
 
+#a, #g {
+    color: #bdc3c7;
+    list-style: none;
+}
+
+.pic {
+    margin:+5% 0 0;
+    border: 3px solid black;
+    float:left;
+}
+
+.sections {
+  height:100px;
+  background-color: #6d6d6d;
+}
+
+.info {
+  margin:+5% 10px;
+  float:left;
+}
+
+#wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  list-style: none;
+}
+
 img {
     display: inline-block;
     vertical-align: middle; /* or top or bottom */
