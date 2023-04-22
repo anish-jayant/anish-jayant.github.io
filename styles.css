@@ -23,3 +23,13 @@
 	transition: border-right 0.5s;
 }
 
+img {
+    display: inline-block;
+    vertical-align: middle; /* or top or bottom */
+}
+
+.text {
+    display: inline-block;
+    vertical-align: middle; /* or top or bottom */
+}
+
