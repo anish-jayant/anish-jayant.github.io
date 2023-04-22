@@ -8,9 +8,8 @@ img {
     vertical-align: middle; /* or top or bottom */
 }
 
-h1:after
+h1
 {
-    content:' ';
-    display:block;
-    border:2px solid black;
+    border-bottom:1px solid #CCC;
+    padding-bottom:3px;
 }
