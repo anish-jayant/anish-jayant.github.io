@@ -1,28 +1,3 @@
-.nav-wrapper {
-	display: flex;
-	justify-content: space-between;
-	padding: 38px;
-	
-}
-
-.left-side{
-	display: flex;
-	flex-direction: column;
-}
-
-.nav-wrapper > .left-side > div {
-	margin-bottom: 22 px;
-	font-size: 0.9 em;
-	text-transform: uppercase;
-	
-}
-
-.nav-link-wrapper {
-	height: 22px
-	border-right: 2px solid;
-	transition: border-right 0.5s;
-}
-
 img {
     display: inline-block;
     vertical-align: middle; /* or top or bottom */
