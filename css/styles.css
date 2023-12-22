@@ -46,3 +46,19 @@ h1
     border-bottom:1px solid #CCC;
     padding-bottom:3px;
 }
+
+p {
+  text-indent:20px;
+}
+
+.section,
+.subsection,
+.subsubsection {
+  display: none;
+}
+
+.toggle {
+  cursor: pointer;
+}
+
+
