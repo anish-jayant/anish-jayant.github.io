@@ -26,27 +26,85 @@
                 </h1>
             </div>
         </div>
+        <style>
+          .photo {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            text-align: left;
+          }
+        
+          .photo img {
+            width: 100%;
+            max-width: 320px; /* Larger image */
+            aspect-ratio: 4 / 3; /* Maintain aspect ratio */
+            object-fit: cover; /* Prevent distortion */
+            display: block;
+            border-radius: 8px; /* Optional: Rounded corners */
+          }
+        
+          .image-label {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #555;
+            font-weight: bold;
+            text-align: left;
+          }
+        
+          @media (max-width: 768px) {
+            .photo img {
+              max-width: 280px; /* Slightly smaller image for tablets */
+            }
+          }
+        
+          @media (max-width: 576px) {
+            .photo img {
+              max-width: 250px; /* Adjust size for smaller screens */
+            }
+          }
+        </style>
+        
+        <div class="row">
+          <div class="col-md-3 col-sm-12 photo">
+            <img id="picture" src="docs/island_portrait_cropped.jpg" 
+                 class="photo_pic"
+                 onmouseover="switchImage(true);" 
+                 onmouseout="switchImage(false);" />
+            <div id="imageLabel" class="image-label">@ Dead Horse Point, Utah</div>
+          </div>
+        
+          <div class="col-md-6 col-sm-12 info-text">
+            <br>
+            <font size="3">
+              <p>Undergraduate Student</p>
+              <p>Email: jayant [at] usc [dot] edu</p>
+              <p>
+                <a href="docs/cv.pdf">[CV]</a> /
+                <a href="https://github.com/anish-jayant">[GitHub]</a> /
+                <a href="https://twitter.com/brownrice0404">[Twitter]</a>
+              </p>
+            </font>
+          </div>
+        </div>
+        
+        <script>
+          function switchImage(isHovering) {
+            var img = document.getElementById("picture");
+            var label = document.getElementById("imageLabel");
+        
+            if (isHovering) {
+              img.src = "docs/climbingpic1.jpeg";
+              label.textContent = "@ LA Boulder";
+            } else {
+              img.src = "docs/island_portrait_cropped.jpg";
+              label.textContent = "@ Dead Horse Point, Utah";
+            }
+          }
+        </script>
+        
+        
 
-      <div class="row">
-        <div class="col-md-2">
-		<div class="photo">
-	  		<img id="picture" src="docs/island_portrait_cropped.jpg" style="width: 260px;height: 190px;" class="photo_pic"/>
-		</div>      
-		</div>
-        <div class="col-md-5 col-md-offset-1">
-          <br>
-		  <font size="3">
-      <p>
-        Undergraduate Student
-      </p>
 
-      <p>
-          Email: jayant [at] usc [dot] edu
-		  </p>
-      <p> <a href="docs/cv.pdf">[CV]</a>/<a href="https://github.com/anish-jayant">[GitHub]</a>/<a href="https://twitter.com/brownrice0404">[Twitter]</a></p>
-		  </font>
-		</div>
-      </div>
       <div class="voffset1"></div>
       <div class="row">
         <div class="span12">
