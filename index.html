@@ -48,6 +48,96 @@
         }
       </style>
 
+      <!-- Dark mode toggle + theme variables -->
+      <style>
+        :root {
+          --bg: #ffffff;
+          --text: #111111;
+          --muted: #555555;
+          --card: #ffffff;
+          --border: #e6e6e6;
+          --link: #0d758f;
+        }
+
+        /* When html has data-theme="dark" */
+        html[data-theme="dark"] {
+          --bg: #0b0f14;
+          --text: #e8eef6;
+          --muted: #aab6c2;
+          --card: #111827;
+          --border: #243244;
+          --link: #7dd3fc;
+        }
+
+        body {
+          background: var(--bg) !important;
+          color: var(--text) !important;
+        }
+
+        p, li, span, div { color: var(--text); }
+        .image-label { color: var(--muted) !important; }
+
+        a { color: var(--link) !important; }
+
+        /* Optional: make common containers look nicer in dark mode */
+        .container, .row, .span12, .col-md-6, .col-md-3 {
+          background: transparent;
+        }
+
+        /* Toggle button styling */
+        .theme-toggle {
+          position: fixed;
+          top: 16px;
+          right: 16px;
+          z-index: 9999;
+          border: 1px solid var(--border);
+          background: var(--card);
+          color: var(--text);
+          padding: 8px 12px;
+          border-radius: 10px;
+          cursor: pointer;
+          font-size: 14px;
+          box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+        }
+
+        .theme-toggle:focus { outline: none; }
+      </style>
+
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark</button>
+
+      <script>
+        (function () {
+          var STORAGE_KEY = "theme";
+          var btn = document.getElementById("themeToggle");
+
+          function setTheme(theme) {
+            if (theme === "dark") {
+              document.documentElement.setAttribute("data-theme", "dark");
+              btn.textContent = "☀️";
+            } else {
+              document.documentElement.removeAttribute("data-theme");
+              btn.textContent = "🌙";
+            }
+            localStorage.setItem(STORAGE_KEY, theme);
+          }
+
+          // Initial theme: saved preference > OS preference > light
+          var saved = localStorage.getItem(STORAGE_KEY);
+          if (saved) {
+            setTheme(saved);
+          } else {
+            var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+            setTheme(prefersDark ? "dark" : "light");
+          }
+
+          btn.addEventListener("click", function () {
+            var isDark = document.documentElement.getAttribute("data-theme") === "dark";
+            setTheme(isDark ? "light" : "dark");
+          });
+        })();
+      </script>
+
+
       <div class="row">
         <div class="col-md-3 col-sm-12 photo">
           <img src="docs/img/santamonica.jpg" class="photo_pic" alt="Picture of me!" />
@@ -75,12 +165,9 @@
             <h3 style="color:#0d758f">About Me</h3>
             <font size="4">
               <p>
-                I'm an undergraduate at USC studying math and computer science. I am fortunate to be advised by
-                <a href="https://vatsalsharan.github.io/">Prof. Vatsal Sharan</a> and very lucky to also collaborate with
-                <a href="https://moiseb.github.io">Prof. Moïse Blanchard</a>.
-                In general, I'm interested in understanding how brittleness in computation arises, from condition
-                dependencies in solving linear systems to applying smoothed analysis to learning theory.
-                I'm also broadly interested in all computational and statistical aspects of learning theory.
+                I'm an undergraduate at USC studying math and computer science, where I am fortunate to be advised by
+                <a href="https://vatsalsharan.github.io/">Prof. Vatsal Sharan</a>.
+                In general, I'm interested in learning theory and theoretical computer science, and especially enjoy thinking about how/why brittleness arises in these areas.
               </p>
               <p>
                 Please do not hesitate to reach out if you're also interested in optimization, learning, or information
