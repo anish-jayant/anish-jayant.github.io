@@ -18,7 +18,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 950px;
       margin: 70px auto;
       padding: 0 30px;
 
@@ -41,6 +41,11 @@
 
       color: #6faea6;
     }
+
+    .publications {
+  grid-column: 2;
+  margin-top: 0;
+}
 
     /* LEFT COLUMN */
 
@@ -131,6 +136,29 @@
         font-size: 17px;
       }
     }
+
+    .publication {
+  position: relative;
+  padding-left: 20px;
+}
+
+.publication::before {
+  content: "◦";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.publication h3,
+.publication p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.publication h3 {
+  font-weight: 500;
+}
   </style>
 </head>
 
@@ -198,6 +226,24 @@
       </section>
     
 
+      <section class="publications">
+  <h2>preprint</h2>
+
+  <article class="publication">
+    <h3>
+      <a href="https://arxiv.org/abs/2610.27402">
+        Communication Complexity of Universal Features
+      </a>
+    </h3>
+    <p>
+      Lunjia Hu, <strong>Anish Jayant</strong>, Peter Li,
+      Princewill Okoroafor, Abhishek Shetty
+    </p>
+<p class="publication-status">
+  <em>in submission, 2026</em>
+</p>
+  </article>
+</section>
   </main>
 
 </body>
